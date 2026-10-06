@@ -30,7 +30,7 @@ html {
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: var(--color-background);
-
+    scroll-behavior: smooth;
 }
 
 body {
@@ -121,17 +121,53 @@ header {
     margin-top: var(--spacing-md);
 }
 
+.menu-message {
+    min-height: 1.5rem;
+    margin: var(--spacing-sm) 0;
+    font-weight: 500;
+    transition: .3s;
+    opacity: 1;
+}
+
+.menu-message.hidden {
+    opacity: 0;
+}
+
 .menu-item {
     background-color: var(--color-surface);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     text-align: center;
+    transition: .3s;
 }
 
+.menu-item.active {
+    transform: translateY(-5px) scale(1.02);
+    background-color: var(--color-primary);
+}
 
+.menu-item:hover {
+    transform: translateY(-3px);
+}
 
 .menu-item p {
     font-size: var(--font-size-lg);
+}
+
+.add-btn {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.add-btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-primary);
 }
 
 .about-section {
@@ -185,6 +221,13 @@ header {
     gap: var(--spacing-sm);
     width: 70%;
     margin: 0 auto;
+}
+
+.form-message {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: green;
 }
 
 .contact-form input,
